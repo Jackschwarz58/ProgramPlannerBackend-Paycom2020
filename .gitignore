@@ -1,3 +1,5 @@
 .DS_STORE
 ._*
 **/._*
+app/
+index.html
