@@ -1,14 +1,13 @@
 <?php
 require 'const.inc.php';
-
 $_POST = json_decode(file_get_contents("php://input"), true);
 
 if (isset($_POST['loginSubmit'])) {
     require 'dbh.php';
 
-    $uid = $_POST['uid'];
-    $pwd = $_POST['pwd'];
-
+    $state = $_POST['state'];
+    $uid = $state['uid'];
+    $pwd = $state['pwd'];
 
     if (empty($uid) || empty($pwd)) {
         header(EMPTYFIELDS); //empty input fields
@@ -37,7 +36,7 @@ if (isset($_POST['loginSubmit'])) {
                     $_SESSION['userId'] = $row['idUsers'];
                     $_SESSION['userUid'] = $row['uidUsers'];
 
-                    header(LOGINSUCCESS); //successful login
+                    header(OPSUCCESS); //successful login
                     exit();
                 } else {
                     header(PASSINCORRECT); //wrong password (default fallback)
@@ -50,6 +49,6 @@ if (isset($_POST['loginSubmit'])) {
         }
     }
 } else {
-    header("Location: ../index.php");
+    header(NOTALLOWED);
     exit();
 }
