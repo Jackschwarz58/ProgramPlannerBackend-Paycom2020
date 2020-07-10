@@ -4,7 +4,7 @@ $_POST = json_decode(file_get_contents("php://input"), true);
 
 if (isset($_POST['signupSubmit'])) {
     require "dbh.php";
-    
+
     $state = $_POST['state'];
     $uid = $state['uid'];
     $email = $state['email'];
@@ -54,6 +54,8 @@ if (isset($_POST['signupSubmit'])) {
 
                     mysqli_stmt_bind_param($stmt, "sss", $uid, $email, $hashedPwd);
                     mysqli_stmt_execute($stmt);
+                    
+
                     header(OPSUCCESS);
                     exit();
                 }
