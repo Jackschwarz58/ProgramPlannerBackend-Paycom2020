@@ -9,7 +9,11 @@ if (isset($_POST['loginSubmit'])) {
     $uid = $state['uid'];
     $pwd = $state['pwd'];
 
-    $rememberUsr = $_POST['rememberUsr'];
+    $cookie_expiration_time = 0;
+    if($_POST['rememberUsr']) {
+      echo json_encode('RememberUsr Set');
+      $cookie_expiration_time = time()+60*60*24*30;
+    }
 
     if (empty($uid) || empty($pwd)) {
         header(EMPTYFIELDS); //empty input fields
@@ -34,13 +38,37 @@ if (isset($_POST['loginSubmit'])) {
                     header(PASSINCORRECT); //wrong password
                     exit();
                 } elseif ($pwdCheck == true) {
-                    $usrInfo = [];
-                    $usrInfo['uid'] = $row['idUsers'];
-                    $usrInfo['userName'] = $row['uidUsers'];
-                    $usrInfo['email'] = $row['emailUsers'];
-                    $usrInfo['test'] = $remember;
+                    $_SESSION['uid'] = $row['idUsers'];
+                    $_SESSION['userName'] = $row['uidUsers'];
+                    $_SESSION['email'] = $row['emailUsers'];
 
-                    echo json_encode($usrInfo);
+
+
+                    echo json_encode($_SESSION);
+
+                    // setcookie('login_usr_name', $usrInfo['userName'], [
+                    //     'expires' => time()+60*60*24*30,
+                    //     'path' => '/',
+                    //     'secure' => false,
+                    //     'httponly' => false,
+                    //     'samesite' =>'Lax',
+                    // ]);
+                    // setcookie('login_usr_email', $usrInfo['email'], [
+                    //     'expires' => time()+60*60*24*30,
+                    //     'path' => '/',
+                    //     'secure' => false,
+                    //     'httponly' => false,
+                    //     'samesite' =>'Lax',
+                    // ]);
+                    // setcookie('login_usr_id', $usrInfo['uid'], [
+                    //     'expires' => time()+60*60*24*30,
+                    //     'path' => '/',
+                    //     'secure' => false,
+                    //     'httponly' => false,
+                    //     'samesite' =>'Lax',
+                    // ]);
+                    // echo json_encode("Set Cookie For User");
+
                     header(OPSUCCESS); //successful login
                     exit();
                 } else {
