@@ -9,18 +9,20 @@ if (isset($_POST['loginSubmit'])) {
     $uid = $state['uid'];
     $pwd = $state['pwd'];
 
+    $rememberUsr = $_POST['rememberUsr'];
+
     if (empty($uid) || empty($pwd)) {
         header(EMPTYFIELDS); //empty input fields
         exit();
     } else {
-        $sql = "SELECT * FROM users WHERE uidUsers=?;";
+        $sql = "SELECT * FROM users WHERE uidusers=? OR emailUsers=?;";
         $stmt = mysqli_stmt_init($conn);
 
         if (!mysqli_stmt_prepare($stmt, $sql)) {
             header(SQLERROR); //sql connection error
             exit();
         } else {
-            mysqli_stmt_bind_param($stmt, "s", $uid);
+            mysqli_stmt_bind_param($stmt, "ss", $uid, $uid);
             mysqli_stmt_execute($stmt);
             $result = mysqli_stmt_get_result($stmt);
 
@@ -32,10 +34,13 @@ if (isset($_POST['loginSubmit'])) {
                     header(PASSINCORRECT); //wrong password
                     exit();
                 } elseif ($pwdCheck == true) {
-                    session_start();
-                    $_SESSION['userId'] = $row['idUsers'];
-                    $_SESSION['userUid'] = $row['uidUsers'];
+                    $usrInfo = [];
+                    $usrInfo['uid'] = $row['idUsers'];
+                    $usrInfo['userName'] = $row['uidUsers'];
+                    $usrInfo['email'] = $row['emailUsers'];
+                    $usrInfo['test'] = $remember;
 
+                    echo json_encode($usrInfo);
                     header(OPSUCCESS); //successful login
                     exit();
                 } else {
