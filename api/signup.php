@@ -54,7 +54,6 @@ if (isset($_POST['signupSubmit'])) {
 
                     mysqli_stmt_bind_param($stmt, "sss", $uid, $email, $hashedPwd);
                     mysqli_stmt_execute($stmt);
-                    
 
                     header(OPSUCCESS);
                     exit();
