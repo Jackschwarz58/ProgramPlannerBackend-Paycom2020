@@ -8,7 +8,7 @@ define("NOTALLOWED", "HTTP/1.1 438 Access Not Allowed");
 define("EMPTYFIELDS", "HTTP/1.1 432 Empty Input Fields");
 
 //Login Specific Error Codes
-define("PASSINCORRECT", "HTTP/1.1 433 Incorrect Passwords");
+define("PASSINCORRECT", "HTTP/1.1 433 Incorrect Password");
 define("USERINCORRECT", "HTTP/1.1 434 User Not Found");
 
 //Sign-Up Specific Error Codes
