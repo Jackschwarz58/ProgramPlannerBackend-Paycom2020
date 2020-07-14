@@ -1,10 +1,12 @@
 <?php
 
 require 'const.inc.php';
-$_POST = json_decode(file_get_contents("php://input"), true);
 
-if(isset($_SESSION['userId'])) {
-
+if (isset($_COOKIE['login_usr_id'])) {
+    header(COOKIECONFIRM);
+    echo json_encode($_COOKIE);
+    exit();
 } else {
-
-}
+    header(COOKIENOTFOUND);
+    exit();
+ }
