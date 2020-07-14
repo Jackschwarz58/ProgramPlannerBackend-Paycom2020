@@ -1,6 +1,8 @@
 <?php
 //Success Codes
 define("OPSUCCESS", "HTTP/1.1 200 Successful Operation");
+define("COOKIECONFIRM", "HTTP/1.1 201 Login Cookie Present");
+define("COOKIENOTFOUND", "HTTP/1.1 202 No Cookie Found");
 
 //Global Error Codes
 define("SQLERROR", "HTTP/1.1 439 SQL Connection Error");
@@ -17,3 +19,9 @@ define("INVALIDEMAIL", "HTTP/1.1 446 Email Address Invalid");
 define("INVALIDUID", "HTTP/1.1 447 Username Invalid (No Special Characters)");
 define("INVALIDPWDCHECK", "HTTP/1.1 448 Passwords Don't Match");
 define("USERTAKEN", "HTTP/1.1 449 Username Already Taken");
+
+//Session Specific Error Codes
+define("NOFUNCNAME", "HTTP/1.1 451 No Function Defined");
+define("FUNCNOTFOUND", "HTTP/1.1 452 Function Undefined");
+define("EDITFIELDNOTFOUND", "HTTP/1.1 453 Error When Attempting to Edit Session");
+define("NOIDGIVEN", "HTTP/1.1 454 No Session ID Given");
