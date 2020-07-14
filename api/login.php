@@ -38,36 +38,33 @@ if (isset($_POST['loginSubmit'])) {
                     header(PASSINCORRECT); //wrong password
                     exit();
                 } elseif ($pwdCheck == true) {
-                    $_SESSION['uid'] = $row['idUsers'];
-                    $_SESSION['userName'] = $row['uidUsers'];
-                    $_SESSION['email'] = $row['emailUsers'];
 
+                    $user['uid'] = $row['idUsers'];
+                    $user['userName'] = $row['uidUsers'];
+                    $user['email'] = $row['emailUsers'];
 
-
-                    echo json_encode($_SESSION);
-
-                    // setcookie('login_usr_name', $usrInfo['userName'], [
-                    //     'expires' => time()+60*60*24*30,
-                    //     'path' => '/',
-                    //     'secure' => false,
-                    //     'httponly' => false,
-                    //     'samesite' =>'Lax',
-                    // ]);
-                    // setcookie('login_usr_email', $usrInfo['email'], [
-                    //     'expires' => time()+60*60*24*30,
-                    //     'path' => '/',
-                    //     'secure' => false,
-                    //     'httponly' => false,
-                    //     'samesite' =>'Lax',
-                    // ]);
-                    // setcookie('login_usr_id', $usrInfo['uid'], [
-                    //     'expires' => time()+60*60*24*30,
-                    //     'path' => '/',
-                    //     'secure' => false,
-                    //     'httponly' => false,
-                    //     'samesite' =>'Lax',
-                    // ]);
-                    // echo json_encode("Set Cookie For User");
+                    setcookie('login_usr_name', $user['userName'], [
+                        'expires' => $cookie_expiration_time,
+                        'path' => '/',
+                        'secure' => false,
+                        'httponly' => false,
+                        'samesite' =>'Lax',
+                    ]);
+                    setcookie('login_usr_email', $user['email'], [
+                        'expires' => $cookie_expiration_time,
+                        'path' => '/',
+                        'secure' => false,
+                        'httponly' => false,
+                        'samesite' =>'Lax',
+                    ]);
+                    setcookie('login_usr_id', $user['uid'], [
+                        'expires' => $cookie_expiration_time,
+                        'path' => '/',
+                        'secure' => false,
+                        'httponly' => false,
+                        'samesite' =>'Lax',
+                    ]);
+                    echo json_encode($user);
 
                     header(OPSUCCESS); //successful login
                     exit();
