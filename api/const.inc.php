@@ -29,3 +29,4 @@ define("NOFUNCNAME", "HTTP/1.1 451 No Function Defined");
 define("FUNCNOTFOUND", "HTTP/1.1 452 Function Undefined");
 define("EDITFIELDNOTFOUND", "HTTP/1.1 453 Error When Attempting to Edit Session");
 define("NOIDGIVEN", "HTTP/1.1 454 No Session ID Given");
+define("RELATIONEXISTS", "HTTP/1.1 455 You are Already Enrolled in This Session");
