@@ -52,25 +52,50 @@ if (!isset($_POST['functionname'])) {
       $uid = $_POST['userId'];
       $sid = $_POST['sessionId'];
 
-      $sql = "INSERT INTO users_sessions (user_id, session_id) VALUES (?, ?)";
+
+      $checksql = "SELECT * FROM users_sessions WHERE user_id = ? AND session_id = ?";
       $stmt = mysqli_stmt_init($conn);
 
-      if (!mysqli_stmt_prepare($stmt, $sql)) {
-
+      if (!mysqli_stmt_prepare($stmt, $checksql)) {
         header(SQLERROR);
         exit();
       } else {
         mysqli_stmt_bind_param($stmt, "ii", $uid, $sid);
-
         if (mysqli_stmt_execute($stmt)) {
+          $result = mysqli_stmt_get_result($stmt);
+          if ($row = mysqli_fetch_assoc($result) > 0) {
+            header(RELATIONEXISTS);
+            exit();
+          } else {
+            $sql = "INSERT INTO users_sessions (user_id, session_id) VALUES (?, ?)";
+            $stmt = mysqli_stmt_init($conn);
 
-          header(OPSUCCESS);
-          exit();
+            if (!mysqli_stmt_prepare($stmt, $sql)) {
+              header(SQLERROR);
+              exit();
+            } else {
+              mysqli_stmt_bind_param($stmt, "ii", $uid, $sid);
+
+              if (mysqli_stmt_execute($stmt)) {
+
+                header(OPSUCCESS);
+                exit();
+              } else {
+                header(SQLERROR);
+                exit();
+              }
+            }
+          }
         } else {
           header(SQLERROR);
           exit();
         }
       }
+
+
+
+
+
 
     case 'getUserSessions':
       $uid = $_POST['userId'];
