@@ -48,6 +48,30 @@ if (!isset($_POST['functionname'])) {
         }
       }
 
+    case 'addRelationship':
+      $uid = $_POST['userId'];
+      $sid = $_POST['sessionId'];
+
+      $sql = "INSERT INTO users_sessions (user_id, session_id) VALUES (?, ?)";
+      $stmt = mysqli_stmt_init($conn);
+
+      if (!mysqli_stmt_prepare($stmt, $sql)) {
+
+        header(SQLERROR);
+        exit();
+      } else {
+        mysqli_stmt_bind_param($stmt, "ii", $uid, $sid);
+
+        if (mysqli_stmt_execute($stmt)) {
+
+          header(OPSUCCESS);
+          exit();
+        } else {
+          header(SQLERROR);
+          exit();
+        }
+      }
+
     case 'getUserSessions':
       $uid = $_POST['userId'];
 
