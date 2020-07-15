@@ -9,4 +9,4 @@ if (isset($_COOKIE['login_usr_id'])) {
 } else {
     header(COOKIENOTFOUND);
     exit();
- }
+}
