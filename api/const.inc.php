@@ -1,13 +1,17 @@
 <?php
 //Success Codes
-define("OPSUCCESS", "HTTP/1.1 200 Successful Operation");
+define("OPSUCCESS", "HTTP/1.1 200 Success!");
 define("COOKIECONFIRM", "HTTP/1.1 201 Login Cookie Present");
 define("COOKIENOTFOUND", "HTTP/1.1 202 No Cookie Found");
+define("COOKIESDELETED", "HTTP/1.1 203 Cookies Deleted/User Logged Out");
+
 
 //Global Error Codes
 define("SQLERROR", "HTTP/1.1 439 SQL Connection Error");
 define("NOTALLOWED", "HTTP/1.1 438 Access Not Allowed");
 define("EMPTYFIELDS", "HTTP/1.1 432 Empty Input Fields");
+define("COOKIEERROR", "HTTP/1.1 437 Cookies Not Defined");
+
 
 //Login Specific Error Codes
 define("PASSINCORRECT", "HTTP/1.1 433 Incorrect Password");
