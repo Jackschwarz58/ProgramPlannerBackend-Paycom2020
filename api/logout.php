@@ -26,6 +26,8 @@ if (isset($_COOKIE['login_usr_id'])) {
     ]);
 
     header(COOKIESDELETED);
+    exit();
 } else {
     header(COOKIEERROR);
+    exit();
 }
