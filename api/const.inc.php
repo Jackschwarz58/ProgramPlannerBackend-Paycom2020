@@ -1,4 +1,6 @@
 <?php
+//Error and Success code for use in all the other PHP files
+
 //Success Codes
 define("OPSUCCESS", "HTTP/1.1 200 Success!");
 define("COOKIECONFIRM", "HTTP/1.1 201 Login Cookie Present");

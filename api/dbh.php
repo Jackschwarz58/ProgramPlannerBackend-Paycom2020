@@ -1,11 +1,12 @@
 <?php
+//Establishes a connection to the database to be used across all the other PHP files
 
-$servername = "localhost";
+$servername = "localhost"; //This was for the local database
 $dBUsername = "root";
 $dBPassword = "";
 $dBName = "data";
 
-
+//Sets connection
 $conn = mysqli_connect($servername, $dBUsername, $dBPassword, $dBName);
 
 if (!$conn) {
