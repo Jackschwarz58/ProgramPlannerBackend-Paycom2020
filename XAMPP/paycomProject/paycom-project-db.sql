@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jul 17, 2020 at 02:13 AM
+-- Generation Time: Jul 17, 2020 at 06:37 AM
 -- Server version: 10.4.13-MariaDB
 -- PHP Version: 7.4.7
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `data`
+-- Database: `paycom_project_db`
 --
 
 -- --------------------------------------------------------
@@ -42,7 +42,7 @@ CREATE TABLE `sessions` (
 INSERT INTO `sessions` (`sessionId`, `sessionName`, `sessionAttendees`, `sessionTime`, `sessionDesc`) VALUES
 (119, 'Clean Code 2 Book Review', 4, 1595865600000, 'Today we are reviewing the sequel to Clean Code, \"Clean Code 2: Now with Double the Cleanliness!\".'),
 (120, 'How to Make Example Text', 3, 1595435400000, 'How to make your screenshot example funny, interesting, and grammatically correct. Make sure to spel chek!'),
-(121, 'The Social Network Movie Night', 2, 1596053000000, 'The story of a small startup and their journey to becoming the underdog we know today.'),
+(121, 'The Social Network Movie Night', 2, 1596063600000, 'The story of a small startup and their journey to becoming the underdog we know today.'),
 (122, 'React Reactions', 3, 1595606400000, 'Our engineers react to your React!'),
 (123, 'Programming Puns 101', 3, 1595610000000, 'Why\'d the Software Engineer quit his job? He didn\'t get Arrays!'),
 (124, 'How to Exit vim', 4, 1595869200000, 'Don\'t worry, we aren\'t sure either.'),
