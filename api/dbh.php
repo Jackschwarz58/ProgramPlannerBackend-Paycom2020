@@ -4,7 +4,7 @@
 $servername = "localhost"; //This was for the local database
 $dBUsername = "root";
 $dBPassword = "";
-$dBName = "data";
+$dBName = "paycom_project_db";
 
 //Sets connection
 $conn = mysqli_connect($servername, $dBUsername, $dBPassword, $dBName);
