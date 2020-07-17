@@ -42,7 +42,7 @@ CREATE TABLE `sessions` (
 INSERT INTO `sessions` (`sessionId`, `sessionName`, `sessionAttendees`, `sessionTime`, `sessionDesc`) VALUES
 (119, 'Clean Code 2 Book Review', 4, 1595865600000, 'Today we are reviewing the sequel to Clean Code, \"Clean Code 2: Now with Double the Cleanliness!\".'),
 (120, 'How to Make Example Text', 3, 1595435400000, 'How to make your screenshot example funny, interesting, and grammatically correct. Make sure to spel chek!'),
-(121, 'The Social Network Movie Night', 2, 1596053009000, 'The story of a small startup and their journey to becoming the underdog we know today.'),
+(121, 'The Social Network Movie Night', 2, 1596053000000, 'The story of a small startup and their journey to becoming the underdog we know today.'),
 (122, 'React Reactions', 3, 1595606400000, 'Our engineers react to your React!'),
 (123, 'Programming Puns 101', 3, 1595610000000, 'Why\'d the Software Engineer quit his job? He didn\'t get Arrays!'),
 (124, 'How to Exit vim', 4, 1595869200000, 'Don\'t worry, we aren\'t sure either.'),
