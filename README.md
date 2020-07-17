@@ -63,6 +63,7 @@ htdocs
    │   index.html
    │   README.md
    │   paycom-project-db.sql
+   │   .htaccess
    └───app
        │   build/
 ```
