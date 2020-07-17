@@ -72,7 +72,7 @@ htdocs
 6. With XAMPP running, find the IP Address shown in application's main view (should look something like 192.168.xx.x) 
 7. Navigate to `http://{ip address from previous step}/paycomProject/index`
 8. You should be up and running!
-9. 
+
 ##### Notes
 (1) For simplicity sake, there is no sql username or password set by default or defined in the PHP files. If you have set one up, you will need to navigate to `htdocs/paycomProject/api/dbh.php` and change the $dB fields. 
 
