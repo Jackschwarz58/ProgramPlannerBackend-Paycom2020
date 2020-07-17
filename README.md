@@ -67,12 +67,12 @@ htdocs
    └───app
        │   build/
 ```
-3. Make sure XAMPP is running the open up phpMyAdmin by going to `http://localhost/phpmyadmin` in your browser
-4. Create a new database named `paycom_project_db` and navigate to the **_import_** tab.
-5. Under this tab, drag the file `paycom-project-db.sql` into the browser window. This will populate your database with the correct tables and columns as well as add some sample data. (1)
-6. With XAMPP running, find the IP Address shown in application's main view (should look something like 192.168.xx.x) 
-7. Navigate to `http://{ip address from previous step}/paycomProject/index`
-8. You should be up and running!
+4. Make sure XAMPP is running and open phpMyAdmin by going to `http://localhost/phpmyadmin` in your browser
+5. Create a new database named `paycom_project_db` and navigate to the **_import_** tab.
+6. Under this tab, drag the file `paycom-project-db.sql` into the browser window. This will populate your database with the correct tables and columns as well as add some sample data. (1)
+7. With XAMPP running, find the IP Address shown in application's main view (should look something like 192.168.xx.x) 
+8. Navigate to `http://{ip address from previous step}/paycomProject/index`
+9. You should be up and running!
 
 ##### Notes
 (1) For simplicity sake, there is no sql username or password set by default or defined in the PHP files. If you have set one up, you will need to navigate to `htdocs/paycomProject/api/dbh.php` and change the $dB fields. 
