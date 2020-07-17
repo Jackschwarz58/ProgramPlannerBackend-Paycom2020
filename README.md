@@ -4,6 +4,11 @@
 
 ### To view a more general overview of the application and see the Front End codebase, please visit the write-up over on the [Front End Repo](https://github.com/Jackschwarz58/ProgramPlanner-Paycom2020)
 
+---
+
+#### For a video overview and demo, click the video below:
+[![Video Overview](https://i.imgur.com/v6ltiJI.jpg)](https://www.youtube.com/watch?v=Z091szPwp2Q)
+
 ## About
 
 This is a web application that is designed to help users sign up for, view information about, and edit information regarding sessions in the Paycom Summer Engagement Program. This repo is dedicated to the backend functionality and setup for the application.
